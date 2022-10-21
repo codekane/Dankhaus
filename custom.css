@@ -1,0 +1,88 @@
+:root {
+  --background-color: black;
+  --pm-offset: calc((100vw + 935px) / 2);
+  --chat-offset: calc((100vw - 1350px) /2);
+  --cw1: calc(100vw - 300px);
+  --cw2: calc(100vw - 1350px);
+  --chat-width: calc(var(--cw1) - var(--cw2));
+}
+
+div#videos-content {
+  top: 10px;
+}
+
+div#room {
+  position: relative;
+}
+
+sc-videolist {
+  height: 600px;
+}
+
+sc-chat {
+  position: absolute;
+  width: var(--chat-width) !important;
+  margin-left: var(--chat-offset);
+  height: 300px !important;
+  top: 450px;
+}
+
+sc-userlist {
+  height: 300px;
+  position: absolute;
+  left: var(--pm-offset) !important;
+  top: 450px;
+}
+
+div.video > .video-wrapper::before {
+  padding-bottom: 50%;
+}
+
+body {
+  overflow-y: scroll !important;
+}
+
+#chat-content > .message.noavatar {
+  display: flex;
+  align-items: center;
+  background-color: var(--background-color) !important;
+
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+#chat-content > .message.noavatar div.content:first-of-type {
+  /*margin-left:100px;  */
+  height: 22px;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+#chat-content > .message.noavatar div.content:first-of-type + div.content {
+  margin-top: 10px;
+}
+
+#chat-content > .message > .nickname {
+  /*position: fixed;*/
+}
+
+#chat-content > .message.system {
+  padding: 0;
+}
+
+#chat-content > .message.system span.hidden-selectable {
+  display: none;
+}
+
+#chat-content > .message.system span.timestamp {
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.hidden-selectable {
+  width: inherit;
+  height: inherit;
+  opacity: inherit;
+  position: inherit;
+}
